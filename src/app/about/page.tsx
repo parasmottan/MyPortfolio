@@ -89,7 +89,7 @@ export default function About() {
             <span className={styles.label}>The Designer & Developer</span>
             <h1 className={styles.title}>Blending<br />Design with<br />Engineering</h1>
             <p className={styles.subtitle}>
-              Based in Berlin, I bridge the gap between creative vision and technical execution, building digital products that feel as good as they look.
+              Based in India, I bridge the gap between creative vision and technical execution, building digital products that feel as good as they look.
             </p>
             <a href="#" className={styles.downloadBtn}>
               <ArrowDown size={18} /> Scroll to explore

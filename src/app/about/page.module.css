@@ -1,13 +1,19 @@
 .main {
-  padding-top: 160px;
+  padding-top: 140px;
   min-height: 100vh;
+}
+
+@media (max-width: 768px) {
+  .main {
+    padding-top: 100px;
+  }
 }
 
 .hero {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 60px;
-  margin-bottom: 160px;
+  margin-bottom: 140px;
   align-items: center;
 }
 
@@ -15,6 +21,7 @@
   .hero {
     grid-template-columns: 1fr;
     gap: 40px;
+    margin-bottom: 100px;
   }
 }
 
@@ -32,7 +39,7 @@
 }
 
 .title {
-  font-size: clamp(72px, 10vw, 96px);
+  font-size: clamp(42px, 10vw, 96px);
   font-family: var(--font-sans);
   font-weight: 500;
   line-height: 1.1;
@@ -84,7 +91,7 @@
   background-color: #fff;
   padding: 80px;
   border-radius: var(--radius-lg);
-  margin-bottom: 160px;
+  margin-bottom: 140px;
   box-shadow: var(--shadow-sm);
   display: grid;
   grid-template-columns: 1fr 3fr;
@@ -95,13 +102,14 @@
 @media (max-width: 900px) {
   .philosophy {
     grid-template-columns: 1fr;
-    padding: 40px;
-    gap: 32px;
+    padding: 32px 24px;
+    gap: 24px;
+    margin-bottom: 100px;
   }
 }
 
 .philosophyText {
-  font-size: clamp(28px, 4vw, 36px);
+  font-size: clamp(24px, 4vw, 36px);
   font-family: var(--font-sans);
   line-height: 1.4;
 }
@@ -111,7 +119,7 @@
   display: grid;
   grid-template-columns: 1fr 3fr;
   gap: 60px;
-  margin-bottom: 160px;
+  margin-bottom: 140px;
   align-items: start;
 }
 
@@ -119,6 +127,7 @@
   .journey {
     grid-template-columns: 1fr;
     gap: 40px;
+    margin-bottom: 100px;
   }
 }
 
@@ -134,6 +143,13 @@
   position: relative;
   opacity: 0;
   transform: translateY(30px);
+}
+
+@media (max-width: 600px) {
+  .timelineItem {
+    padding-left: 24px;
+    padding-bottom: 40px;
+  }
 }
 
 .timelineItem::before {
@@ -174,7 +190,13 @@
 /* TOOLS */
 .tools {
   text-align: center;
-  margin-bottom: 160px;
+  margin-bottom: 140px;
+}
+
+@media (max-width: 768px) {
+  .tools {
+    margin-bottom: 100px;
+  }
 }
 
 .toolsTitle {
@@ -189,6 +211,14 @@
   justify-content: center;
   gap: 40px;
   flex-wrap: wrap;
+}
+
+@media (max-width: 600px) {
+  .toolsGrid {
+    gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 .toolIcon {
