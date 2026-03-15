@@ -1,0 +1,335 @@
+.main {
+  padding-top: 160px;
+  min-height: 100vh;
+  padding-bottom: 160px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.title {
+  font-size: clamp(72px, 10vw, 96px);
+  font-family: var(--font-sans);
+  font-weight: 500;
+  line-height: 1.1;
+  margin-bottom: 24px;
+}
+
+.title span {
+  font-style: normal;
+  color: var(--text-secondary);
+}
+
+.subtitle {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.bookingContainer {
+  background-color: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(8px);
+  border-radius: 24px;
+  /* matches site consistent card style */
+  padding: 56px;
+  box-shadow: var(--shadow-sm);
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .bookingContainer {
+    padding: 32px 20px;
+  }
+}
+
+.bookingGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+}
+
+@media (max-width: 900px) {
+  .bookingGrid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+}
+
+.bookingColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+.authorBlock {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: #ddd;
+}
+
+.authorName {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  letter-spacing: 1px;
+}
+
+.callTitle {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.callDetails {
+  display: flex;
+  gap: 16px;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin-bottom: 24px;
+}
+
+.callDetails span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.callDesc {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 40px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.dateTimeTitle {
+  font-weight: 500;
+  margin-bottom: 24px;
+}
+
+.datePickerGrid {
+  display: grid;
+  grid-template-columns: 2fr 1.5fr;
+  gap: 24px;
+}
+
+@media (max-width: 480px) {
+  .datePickerGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.calendarHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  font-weight: 500;
+}
+
+.calendarDays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+}
+
+.calendarNums {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.calendarNum {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.calendarNum:hover {
+  background-color: #f0f0f0;
+}
+
+.calendarNum.active {
+  background-color: var(--text-primary);
+  color: #fff;
+}
+
+.timeSlots {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.timeSlot {
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 12px;
+  text-align: center;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.timeSlot:hover {
+  border-color: var(--text-primary);
+}
+
+/* FORM CARD */
+.formTitle {
+  font-size: 2rem;
+  font-family: var(--font-sans);
+  margin-bottom: 32px;
+}
+
+.inputGroup {
+  position: relative;
+  margin-bottom: 32px;
+}
+
+.inputField {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid var(--border-color);
+  padding: 12px 0;
+  font-size: 1rem;
+  background: transparent;
+  outline: none;
+  color: var(--text-primary);
+}
+
+.inputField::placeholder {
+  color: var(--text-secondary);
+}
+
+.focusLine {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: var(--text-primary);
+  transition: width 0.4s ease;
+}
+
+.inputField:focus+.focusLine {
+  width: 100%;
+}
+
+.submitBtn {
+  background-color: var(--text-primary);
+  color: #fff;
+  padding: 16px 24px;
+  border-radius: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  transition: transform 0.22s ease-out, box-shadow 0.22s ease-out, background-color 0.22s ease-out;
+  margin-bottom: 40px;
+}
+
+.submitBtn:hover:not(:disabled) {
+  transform: scale(1.03);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+  background-color: #1a1a1a;
+}
+
+.submitBtn:hover:not(:disabled) .btnArrowIcon {
+  transform: translateX(6px);
+  transition: transform 0.22s ease-out;
+}
+
+.btnArrowIcon {
+  transition: transform 0.22s ease-out;
+  display: flex;
+  align-items: center;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+.spinner {
+  width: 22px;
+  height: 22px;
+  border: 2.5px solid rgba(255, 255, 255, 0.4);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.9s linear infinite;
+  flex-shrink: 0;
+}
+
+.validationMsg {
+  font-size: 13px;
+  color: #e05050;
+  margin-top: 6px;
+  line-height: 1.4;
+  display: block;
+}
+
+.contactFooter {
+  margin-top: auto;
+}
+
+.contactLabel {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.emailLink {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 32px;
+  display: block;
+}
+
+.socials {
+  display: flex;
+  gap: 16px;
+}
+
+.socialIcon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  color: var(--text-primary);
+}
+
+.socialIcon:hover {
+  background-color: var(--text-primary);
+  color: #fff;
+}

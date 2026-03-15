@@ -1,0 +1,328 @@
+
+> portfolio-app@0.1.0 build
+> next build
+
+ΓÜá Warning: Next.js inferred your workspace root, but it may not be correct.
+ We detected multiple lockfiles and selected the directory of C:\Users\Paras Mottan\package-lock.json as the root directory.
+ To silence this warning, set `turbopack.root` in your Next.js config, or consider removing one of the lockfiles if it's not needed.
+   See https://nextjs.org/docs/app/api-reference/config/next-config-js/turbopack#root-directory for more information.
+ Detected additional lockfiles: 
+   * C:\Users\Paras Mottan\OneDrive\Desktop\Portfolioo\package-lock.json
+
+Γû▓ Next.js 16.1.6 (Turbopack)
+
+  Creating an optimized production build ...
+
+> Build error occurred
+Error: Turbopack build failed with 10 errors:
+./OneDrive/Desktop/Portfolioo/src/app/about/page.module.css
+Error evaluating Node.js code
+Error: Cannot find module '@tailwindcss/postcss'
+Require stack:
+- C:\Users\Paras Mottan\OneDrive\Desktop\Portfolioo\.next\build\chunks\[root-of-the-server]__9a915e44._.js
+- C:\Users\Paras Mottan\OneDrive\Desktop\Portfolioo\.next\build\chunks\[turbopack]_runtime.js
+- C:\Users\Paras Mottan\OneDrive\Desktop\Portfolioo\.next\build\postcss.js
+    [at Module._resolveFilename (node:internal/modules/cjs/loader:1248:15)]
+    [at Module._load (node:internal/modules/cjs/loader:1074:27)]
+    [at TracingChannel.traceSync (node:diagnostics_channel:315:14)]
+    [at wrapModuleLoad (node:internal/modules/cjs/loader:217:24)]
+    [at Module.require (node:internal/modules/cjs/loader:1339:12)]
+    [at require (node:internal/modules/helpers:126:16)]
+    at turbopack:///[turbopack-node]/transforms/postcss.ts:49:25 [C:\Users\Paras Mottan\OneDrive\Desktop\Portfolioo\.next\build\chunks\[root-of-the-server]__9a915e44._.js:134:33]
+    [at <anonymous>]
+    at Module.init (turbopack:///[turbopack-node]/transforms/postcss.ts:43:33) [C:\Users\Paras Mottan\OneDrive\Desktop\Portfolioo\.next\build\chunks\[root-of-the-server]__9a915e44._.js:129:35]
+    at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:77:20) [C:\Users\Paras Mottan\OneDrive\Desktop\Portfolioo\.next\build\chunks\[root-of-the-server]__7e16638b._.js:429:26]
+
+Import traces:
+  Client Component Browser:
+    ./OneDrive/Desktop/Portfolioo/src/app/about/page.module.css [Client Component Browser]
+    ./OneDrive/Desktop/Portfolioo/src/app/about/page.tsx [Client Component Browser]
+    ./OneDrive/Desktop/Portfolioo/src/app/about/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./OneDrive/Desktop/Portfolioo/src/app/about/page.module.css [Client Component SSR]
+    ./OneDrive/Desktop/Portfolioo/src/app/about/page.tsx [Client Component SSR]
+    ./OneDrive/Desktop/Portfolioo/src/app/about/page.tsx [Server Component]
+
+
+./OneDrive/Desktop/Portfolioo/src/app/blog/[slug]/page.module.css
+Error evaluating Node.js code
+Error: Cannot find module '@tailwindcss/postcss'
+Require stack:
+- C:\Users\Paras Mottan\OneDrive\Desktop\Portfolioo\.next\build\chunks\[root-of-the-server]__9a915e44._.js
+- C:\Users\Paras Mottan\OneDrive\Desktop\Portfolioo\.next\build\chunks\[turbopack]_runtime.js
+- C:\Users\Paras Mottan\OneDrive\Desktop\Portfolioo\.next\build\postcss.js
+    [at Module._resolveFilename (node:internal/modules/cjs/loader:1248:15)]
+    [at Module._load (node:internal/modules/cjs/loader:1074:27)]
+    [at TracingChannel.traceSync (node:diagnostics_channel:315:14)]
+    [at wrapModuleLoad (node:internal/modules/cjs/loader:217:24)]
+    [at Module.require (node:internal/modules/cjs/loader:1339:12)]
+    [at require (node:internal/modules/helpers:126:16)]
+    at turbopack:///[turbopack-node]/transforms/postcss.ts:49:25 [C:\Users\Paras Mottan\OneDrive\Desktop\Portfolioo\.next\build\chunks\[root-of-the-server]__9a915e44._.js:134:33]
+    [at <anonymous>]
+    at Module.init (turbopack:///[turbopack-node]/transforms/postcss.ts:43:33) [C:\Users\Paras Mottan\OneDrive\Desktop\Portfolioo\.next\build\chunks\[root-of-the-server]__9a915e44._.js:129:35]
+    at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:77:20) [C:\Users\Paras Mottan\OneDrive\Desktop\Portfolioo\.next\build\chunks\[root-of-the-server]__7e16638b._.js:429:26]
+
+Import traces:
+  Client Component Browser:
+    ./OneDrive/Desktop/Portfolioo/src/app/blog/[slug]/page.module.css [Client Component Browser]
+    ./OneDrive/Desktop/Portfolioo/src/app/blog/[slug]/page.tsx [Client Component Browser]
+    ./OneDrive/Desktop/Portfolioo/src/app/blog/[slug]/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./OneDrive/Desktop/Portfolioo/src/app/blog/[slug]/page.module.css [Client Component SSR]
+    ./OneDrive/Desktop/Portfolioo/src/app/blog/[slug]/page.tsx [Client Component SSR]
+    ./OneDrive/Desktop/Portfolioo/src/app/blog/[slug]/page.tsx [Server Component]
+
+
+./OneDrive/Desktop/Portfolioo/src/app/blog/page.module.css
+Error evaluating Node.js code
+Error: Cannot find module '@tailwindcss/postcss'
+Require stack:
+- C:\Users\Paras Mottan\OneDrive\Desktop\Portfolioo\.next\build\chunks\[root-of-the-server]__9a915e44._.js
+- C:\Users\Paras Mottan\OneDrive\Desktop\Portfolioo\.next\build\chunks\[turbopack]_runtime.js
+- C:\Users\Paras Mottan\OneDrive\Desktop\Portfolioo\.next\build\postcss.js
+    [at Module._resolveFilename (node:internal/modules/cjs/loader:1248:15)]
+    [at Module._load (node:internal/modules/cjs/loader:1074:27)]
+    [at TracingChannel.traceSync (node:diagnostics_channel:315:14)]
+    [at wrapModuleLoad (node:internal/modules/cjs/loader:217:24)]
+    [at Module.require (node:internal/modules/cjs/loader:1339:12)]
+    [at require (node:internal/modules/helpers:126:16)]
+    at turbopack:///[turbopack-node]/transforms/postcss.ts:49:25 [C:\Users\Paras Mottan\OneDrive\Desktop\Portfolioo\.next\build\chunks\[root-of-the-server]__9a915e44._.js:134:33]
+    [at <anonymous>]
+    at Module.init (turbopack:///[turbopack-node]/transforms/postcss.ts:43:33) [C:\Users\Paras Mottan\OneDrive\Desktop\Portfolioo\.next\build\chunks\[root-of-the-server]__9a915e44._.js:129:35]
+    at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:77:20) [C:\Users\Paras Mottan\OneDrive\Desktop\Portfolioo\.next\build\chunks\[root-of-the-server]__7e16638b._.js:429:26]
+
+Import traces:
+  Client Component Browser:
+    ./OneDrive/Desktop/Portfolioo/src/app/blog/page.module.css [Client Component Browser]
+    ./OneDrive/Desktop/Portfolioo/src/app/blog/page.tsx [Client Component Browser]
+    ./OneDrive/Desktop/Portfolioo/src/app/blog/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./OneDrive/Desktop/Portfolioo/src/app/blog/page.module.css [Client Component SSR]
+    ./OneDrive/Desktop/Portfolioo/src/app/blog/page.tsx [Client Component SSR]
+    ./OneDrive/Desktop/Portfolioo/src/app/blog/page.tsx [Server Component]
+
+
+./OneDrive/Desktop/Portfolioo/src/app/contact/page.module.css
+Error evaluating Node.js code
+Error: Cannot find module '@tailwindcss/postcss'
+Require stack:
+- C:\Users\Paras Mottan\OneDrive\Desktop\Portfolioo\.next\build\chunks\[root-of-the-server]__9a915e44._.js
+- C:\Users\Paras Mottan\OneDrive\Desktop\Portfolioo\.next\build\chunks\[turbopack]_runtime.js
+- C:\Users\Paras Mottan\OneDrive\Desktop\Portfolioo\.next\build\postcss.js
+    [at Module._resolveFilename (node:internal/modules/cjs/loader:1248:15)]
+    [at Module._load (node:internal/modules/cjs/loader:1074:27)]
+    [at TracingChannel.traceSync (node:diagnostics_channel:315:14)]
+    [at wrapModuleLoad (node:internal/modules/cjs/loader:217:24)]
+    [at Module.require (node:internal/modules/cjs/loader:1339:12)]
+    [at require (node:internal/modules/helpers:126:16)]
+    at turbopack:///[turbopack-node]/transforms/postcss.ts:49:25 [C:\Users\Paras Mottan\OneDrive\Desktop\Portfolioo\.next\build\chunks\[root-of-the-server]__9a915e44._.js:134:33]
+    [at <anonymous>]
+    at Module.init (turbopack:///[turbopack-node]/transforms/postcss.ts:43:33) [C:\Users\Paras Mottan\OneDrive\Desktop\Portfolioo\.next\build\chunks\[root-of-the-server]__9a915e44._.js:129:35]
+    at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:77:20) [C:\Users\Paras Mottan\OneDrive\Desktop\Portfolioo\.next\build\chunks\[root-of-the-server]__7e16638b._.js:429:26]
+
+Import traces:
+  Client Component Browser:
+    ./OneDrive/Desktop/Portfolioo/src/app/contact/page.module.css [Client Component Browser]
+    ./OneDrive/Desktop/Portfolioo/src/app/contact/page.tsx [Client Component Browser]
+    ./OneDrive/Desktop/Portfolioo/src/app/contact/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./OneDrive/Desktop/Portfolioo/src/app/contact/page.module.css [Client Component SSR]
+    ./OneDrive/Desktop/Portfolioo/src/app/contact/page.tsx [Client Component SSR]
+    ./OneDrive/Desktop/Portfolioo/src/app/contact/page.tsx [Server Component]
+
+
+./OneDrive/Desktop/Portfolioo/src/app/globals.css
+Error evaluating Node.js code
+Error: Cannot find module '@tailwindcss/postcss'
+Require stack:
+- C:\Users\Paras Mottan\OneDrive\Desktop\Portfolioo\.next\build\chunks\[root-of-the-server]__9a915e44._.js
+- C:\Users\Paras Mottan\OneDrive\Desktop\Portfolioo\.next\build\chunks\[turbopack]_runtime.js
+- C:\Users\Paras Mottan\OneDrive\Desktop\Portfolioo\.next\build\postcss.js
+    [at Module._resolveFilename (node:internal/modules/cjs/loader:1248:15)]
+    [at Module._load (node:internal/modules/cjs/loader:1074:27)]
+    [at TracingChannel.traceSync (node:diagnostics_channel:315:14)]
+    [at wrapModuleLoad (node:internal/modules/cjs/loader:217:24)]
+    [at Module.require (node:internal/modules/cjs/loader:1339:12)]
+    [at require (node:internal/modules/helpers:126:16)]
+    at turbopack:///[turbopack-node]/transforms/postcss.ts:49:25 [C:\Users\Paras Mottan\OneDrive\Desktop\Portfolioo\.next\build\chunks\[root-of-the-server]__9a915e44._.js:134:33]
+    [at <anonymous>]
+    at Module.init (turbopack:///[turbopack-node]/transforms/postcss.ts:43:33) [C:\Users\Paras Mottan\OneDrive\Desktop\Portfolioo\.next\build\chunks\[root-of-the-server]__9a915e44._.js:129:35]
+    at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:77:20) [C:\Users\Paras Mottan\OneDrive\Desktop\Portfolioo\.next\build\chunks\[root-of-the-server]__7e16638b._.js:429:26]
+
+Import trace:
+  Client Component Browser:
+    ./OneDrive/Desktop/Portfolioo/src/app/globals.css [Client Component Browser]
+    ./OneDrive/Desktop/Portfolioo/src/app/layout.tsx [Server Component]
+
+
+./OneDrive/Desktop/Portfolioo/src/app/page.module.css
+Error evaluating Node.js code
+Error: Cannot find module '@tailwindcss/postcss'
+Require stack:
+- C:\Users\Paras Mottan\OneDrive\Desktop\Portfolioo\.next\build\chunks\[root-of-the-server]__9a915e44._.js
+- C:\Users\Paras Mottan\OneDrive\Desktop\Portfolioo\.next\build\chunks\[turbopack]_runtime.js
+- C:\Users\Paras Mottan\OneDrive\Desktop\Portfolioo\.next\build\postcss.js
+    [at Module._resolveFilename (node:internal/modules/cjs/loader:1248:15)]
+    [at Module._load (node:internal/modules/cjs/loader:1074:27)]
+    [at TracingChannel.traceSync (node:diagnostics_channel:315:14)]
+    [at wrapModuleLoad (node:internal/modules/cjs/loader:217:24)]
+    [at Module.require (node:internal/modules/cjs/loader:1339:12)]
+    [at require (node:internal/modules/helpers:126:16)]
+    at turbopack:///[turbopack-node]/transforms/postcss.ts:49:25 [C:\Users\Paras Mottan\OneDrive\Desktop\Portfolioo\.next\build\chunks\[root-of-the-server]__9a915e44._.js:134:33]
+    [at <anonymous>]
+    at Module.init (turbopack:///[turbopack-node]/transforms/postcss.ts:43:33) [C:\Users\Paras Mottan\OneDrive\Desktop\Portfolioo\.next\build\chunks\[root-of-the-server]__9a915e44._.js:129:35]
+    at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:77:20) [C:\Users\Paras Mottan\OneDrive\Desktop\Portfolioo\.next\build\chunks\[root-of-the-server]__7e16638b._.js:429:26]
+
+Import traces:
+  Client Component Browser:
+    ./OneDrive/Desktop/Portfolioo/src/app/page.module.css [Client Component Browser]
+    ./OneDrive/Desktop/Portfolioo/src/app/page.tsx [Client Component Browser]
+    ./OneDrive/Desktop/Portfolioo/src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./OneDrive/Desktop/Portfolioo/src/app/page.module.css [Client Component SSR]
+    ./OneDrive/Desktop/Portfolioo/src/app/page.tsx [Client Component SSR]
+    ./OneDrive/Desktop/Portfolioo/src/app/page.tsx [Server Component]
+
+
+./OneDrive/Desktop/Portfolioo/src/app/work/[slug]/page.module.css
+Error evaluating Node.js code
+Error: Cannot find module '@tailwindcss/postcss'
+Require stack:
+- C:\Users\Paras Mottan\OneDrive\Desktop\Portfolioo\.next\build\chunks\[root-of-the-server]__9a915e44._.js
+- C:\Users\Paras Mottan\OneDrive\Desktop\Portfolioo\.next\build\chunks\[turbopack]_runtime.js
+- C:\Users\Paras Mottan\OneDrive\Desktop\Portfolioo\.next\build\postcss.js
+    [at Module._resolveFilename (node:internal/modules/cjs/loader:1248:15)]
+    [at Module._load (node:internal/modules/cjs/loader:1074:27)]
+    [at TracingChannel.traceSync (node:diagnostics_channel:315:14)]
+    [at wrapModuleLoad (node:internal/modules/cjs/loader:217:24)]
+    [at Module.require (node:internal/modules/cjs/loader:1339:12)]
+    [at require (node:internal/modules/helpers:126:16)]
+    at turbopack:///[turbopack-node]/transforms/postcss.ts:49:25 [C:\Users\Paras Mottan\OneDrive\Desktop\Portfolioo\.next\build\chunks\[root-of-the-server]__9a915e44._.js:134:33]
+    [at <anonymous>]
+    at Module.init (turbopack:///[turbopack-node]/transforms/postcss.ts:43:33) [C:\Users\Paras Mottan\OneDrive\Desktop\Portfolioo\.next\build\chunks\[root-of-the-server]__9a915e44._.js:129:35]
+    at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:77:20) [C:\Users\Paras Mottan\OneDrive\Desktop\Portfolioo\.next\build\chunks\[root-of-the-server]__7e16638b._.js:429:26]
+
+Import traces:
+  Client Component Browser:
+    ./OneDrive/Desktop/Portfolioo/src/app/work/[slug]/page.module.css [Client Component Browser]
+    ./OneDrive/Desktop/Portfolioo/src/app/work/[slug]/page.tsx [Client Component Browser]
+    ./OneDrive/Desktop/Portfolioo/src/app/work/[slug]/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./OneDrive/Desktop/Portfolioo/src/app/work/[slug]/page.module.css [Client Component SSR]
+    ./OneDrive/Desktop/Portfolioo/src/app/work/[slug]/page.tsx [Client Component SSR]
+    ./OneDrive/Desktop/Portfolioo/src/app/work/[slug]/page.tsx [Server Component]
+
+
+./OneDrive/Desktop/Portfolioo/src/app/work/page.module.css
+Error evaluating Node.js code
+Error: Cannot find module '@tailwindcss/postcss'
+Require stack:
+- C:\Users\Paras Mottan\OneDrive\Desktop\Portfolioo\.next\build\chunks\[root-of-the-server]__9a915e44._.js
+- C:\Users\Paras Mottan\OneDrive\Desktop\Portfolioo\.next\build\chunks\[turbopack]_runtime.js
+- C:\Users\Paras Mottan\OneDrive\Desktop\Portfolioo\.next\build\postcss.js
+    [at Module._resolveFilename (node:internal/modules/cjs/loader:1248:15)]
+    [at Module._load (node:internal/modules/cjs/loader:1074:27)]
+    [at TracingChannel.traceSync (node:diagnostics_channel:315:14)]
+    [at wrapModuleLoad (node:internal/modules/cjs/loader:217:24)]
+    [at Module.require (node:internal/modules/cjs/loader:1339:12)]
+    [at require (node:internal/modules/helpers:126:16)]
+    at turbopack:///[turbopack-node]/transforms/postcss.ts:49:25 [C:\Users\Paras Mottan\OneDrive\Desktop\Portfolioo\.next\build\chunks\[root-of-the-server]__9a915e44._.js:134:33]
+    [at <anonymous>]
+    at Module.init (turbopack:///[turbopack-node]/transforms/postcss.ts:43:33) [C:\Users\Paras Mottan\OneDrive\Desktop\Portfolioo\.next\build\chunks\[root-of-the-server]__9a915e44._.js:129:35]
+    at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:77:20) [C:\Users\Paras Mottan\OneDrive\Desktop\Portfolioo\.next\build\chunks\[root-of-the-server]__7e16638b._.js:429:26]
+
+Import traces:
+  Client Component Browser:
+    ./OneDrive/Desktop/Portfolioo/src/app/work/page.module.css [Client Component Browser]
+    ./OneDrive/Desktop/Portfolioo/src/app/work/page.tsx [Client Component Browser]
+    ./OneDrive/Desktop/Portfolioo/src/app/work/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./OneDrive/Desktop/Portfolioo/src/app/work/page.module.css [Client Component SSR]
+    ./OneDrive/Desktop/Portfolioo/src/app/work/page.tsx [Client Component SSR]
+    ./OneDrive/Desktop/Portfolioo/src/app/work/page.tsx [Server Component]
+
+
+./OneDrive/Desktop/Portfolioo/src/components/Footer.module.css
+Error evaluating Node.js code
+Error: Cannot find module '@tailwindcss/postcss'
+Require stack:
+- C:\Users\Paras Mottan\OneDrive\Desktop\Portfolioo\.next\build\chunks\[root-of-the-server]__9a915e44._.js
+- C:\Users\Paras Mottan\OneDrive\Desktop\Portfolioo\.next\build\chunks\[turbopack]_runtime.js
+- C:\Users\Paras Mottan\OneDrive\Desktop\Portfolioo\.next\build\postcss.js
+    [at Module._resolveFilename (node:internal/modules/cjs/loader:1248:15)]
+    [at Module._load (node:internal/modules/cjs/loader:1074:27)]
+    [at TracingChannel.traceSync (node:diagnostics_channel:315:14)]
+    [at wrapModuleLoad (node:internal/modules/cjs/loader:217:24)]
+    [at Module.require (node:internal/modules/cjs/loader:1339:12)]
+    [at require (node:internal/modules/helpers:126:16)]
+    at turbopack:///[turbopack-node]/transforms/postcss.ts:49:25 [C:\Users\Paras Mottan\OneDrive\Desktop\Portfolioo\.next\build\chunks\[root-of-the-server]__9a915e44._.js:134:33]
+    [at <anonymous>]
+    at Module.init (turbopack:///[turbopack-node]/transforms/postcss.ts:43:33) [C:\Users\Paras Mottan\OneDrive\Desktop\Portfolioo\.next\build\chunks\[root-of-the-server]__9a915e44._.js:129:35]
+    at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:77:20) [C:\Users\Paras Mottan\OneDrive\Desktop\Portfolioo\.next\build\chunks\[root-of-the-server]__7e16638b._.js:429:26]
+
+Import trace:
+  Server Component:
+    ./OneDrive/Desktop/Portfolioo/src/components/Footer.module.css
+    ./OneDrive/Desktop/Portfolioo/src/components/Footer.tsx
+    ./OneDrive/Desktop/Portfolioo/src/app/layout.tsx
+
+
+./OneDrive/Desktop/Portfolioo/src/components/Navbar.module.css
+Error evaluating Node.js code
+Error: Cannot find module '@tailwindcss/postcss'
+Require stack:
+- C:\Users\Paras Mottan\OneDrive\Desktop\Portfolioo\.next\build\chunks\[root-of-the-server]__9a915e44._.js
+- C:\Users\Paras Mottan\OneDrive\Desktop\Portfolioo\.next\build\chunks\[turbopack]_runtime.js
+- C:\Users\Paras Mottan\OneDrive\Desktop\Portfolioo\.next\build\postcss.js
+    [at Module._resolveFilename (node:internal/modules/cjs/loader:1248:15)]
+    [at Module._load (node:internal/modules/cjs/loader:1074:27)]
+    [at TracingChannel.traceSync (node:diagnostics_channel:315:14)]
+    [at wrapModuleLoad (node:internal/modules/cjs/loader:217:24)]
+    [at Module.require (node:internal/modules/cjs/loader:1339:12)]
+    [at require (node:internal/modules/helpers:126:16)]
+    at turbopack:///[turbopack-node]/transforms/postcss.ts:49:25 [C:\Users\Paras Mottan\OneDrive\Desktop\Portfolioo\.next\build\chunks\[root-of-the-server]__9a915e44._.js:134:33]
+    [at <anonymous>]
+    at Module.init (turbopack:///[turbopack-node]/transforms/postcss.ts:43:33) [C:\Users\Paras Mottan\OneDrive\Desktop\Portfolioo\.next\build\chunks\[root-of-the-server]__9a915e44._.js:129:35]
+    at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:77:20) [C:\Users\Paras Mottan\OneDrive\Desktop\Portfolioo\.next\build\chunks\[root-of-the-server]__7e16638b._.js:429:26]
+
+Import traces:
+  Client Component Browser:
+    ./OneDrive/Desktop/Portfolioo/src/components/Navbar.module.css [Client Component Browser]
+    ./OneDrive/Desktop/Portfolioo/src/components/Navbar.tsx [Client Component Browser]
+    ./OneDrive/Desktop/Portfolioo/src/components/Navbar.tsx [Server Component]
+    ./OneDrive/Desktop/Portfolioo/src/app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./OneDrive/Desktop/Portfolioo/src/components/Navbar.module.css [Client Component SSR]
+    ./OneDrive/Desktop/Portfolioo/src/components/Navbar.tsx [Client Component SSR]
+    ./OneDrive/Desktop/Portfolioo/src/components/Navbar.tsx [Server Component]
+    ./OneDrive/Desktop/Portfolioo/src/app/layout.tsx [Server Component]
+
+
+    at Module.init (turbopack:///[turbopack-node]/transforms/postcss.ts:43:33) [C:\Users\Paras Mottan\OneDrive\Desktop\Portfolioo\.next\build\chunks\[root-of-the-server]__9a915e44._.js:129:35])
+    at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:77:20) [C:\Users\Paras Mottan\OneDrive\Desktop\Portfolioo\.next\build\chunks\[root-of-the-server]__7e16638b._.js:429:26])
+    at Module.init (turbopack:///[turbopack-node]/transforms/postcss.ts:43:33) [C:\Users\Paras Mottan\OneDrive\Desktop\Portfolioo\.next\build\chunks\[root-of-the-server]__9a915e44._.js:129:35])
+    at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:77:20) [C:\Users\Paras Mottan\OneDrive\Desktop\Portfolioo\.next\build\chunks\[root-of-the-server]__7e16638b._.js:429:26])
+    at Module.init (turbopack:///[turbopack-node]/transforms/postcss.ts:43:33) [C:\Users\Paras Mottan\OneDrive\Desktop\Portfolioo\.next\build\chunks\[root-of-the-server]__9a915e44._.js:129:35])
+    at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:77:20) [C:\Users\Paras Mottan\OneDrive\Desktop\Portfolioo\.next\build\chunks\[root-of-the-server]__7e16638b._.js:429:26])
+    at Module.init (turbopack:///[turbopack-node]/transforms/postcss.ts:43:33) [C:\Users\Paras Mottan\OneDrive\Desktop\Portfolioo\.next\build\chunks\[root-of-the-server]__9a915e44._.js:129:35])
+    at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:77:20) [C:\Users\Paras Mottan\OneDrive\Desktop\Portfolioo\.next\build\chunks\[root-of-the-server]__7e16638b._.js:429:26])
+    at Module.init (turbopack:///[turbopack-node]/transforms/postcss.ts:43:33) [C:\Users\Paras Mottan\OneDrive\Desktop\Portfolioo\.next\build\chunks\[root-of-the-server]__9a915e44._.js:129:35])
+    at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:77:20) [C:\Users\Paras Mottan\OneDrive\Desktop\Portfolioo\.next\build\chunks\[root-of-the-server]__7e16638b._.js:429:26])
+    at Module.init (turbopack:///[turbopack-node]/transforms/postcss.ts:43:33) [C:\Users\Paras Mottan\OneDrive\Desktop\Portfolioo\.next\build\chunks\[root-of-the-server]__9a915e44._.js:129:35])
+    at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:77:20) [C:\Users\Paras Mottan\OneDrive\Desktop\Portfolioo\.next\build\chunks\[root-of-the-server]__7e16638b._.js:429:26])
+    at Module.init (turbopack:///[turbopack-node]/transforms/postcss.ts:43:33) [C:\Users\Paras Mottan\OneDrive\Desktop\Portfolioo\.next\build\chunks\[root-of-the-server]__9a915e44._.js:129:35])
+    at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:77:20) [C:\Users\Paras Mottan\OneDrive\Desktop\Portfolioo\.next\build\chunks\[root-of-the-server]__7e16638b._.js:429:26])
+    at Module.init (turbopack:///[turbopack-node]/transforms/postcss.ts:43:33) [C:\Users\Paras Mottan\OneDrive\Desktop\Portfolioo\.next\build\chunks\[root-of-the-server]__9a915e44._.js:129:35])
+    at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:77:20) [C:\Users\Paras Mottan\OneDrive\Desktop\Portfolioo\.next\build\chunks\[root-of-the-server]__7e16638b._.js:429:26])
+    at Module.init (turbopack:///[turbopack-node]/transforms/postcss.ts:43:33) [C:\Users\Paras Mottan\OneDrive\Desktop\Portfolioo\.next\build\chunks\[root-of-the-server]__9a915e44._.js:129:35])
+    at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:77:20) [C:\Users\Paras Mottan\OneDrive\Desktop\Portfolioo\.next\build\chunks\[root-of-the-server]__7e16638b._.js:429:26])
+    at Module.init (turbopack:///[turbopack-node]/transforms/postcss.ts:43:33) [C:\Users\Paras Mottan\OneDrive\Desktop\Portfolioo\.next\build\chunks\[root-of-the-server]__9a915e44._.js:129:35])
+    at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:77:20) [C:\Users\Paras Mottan\OneDrive\Desktop\Portfolioo\.next\build\chunks\[root-of-the-server]__7e16638b._.js:429:26])

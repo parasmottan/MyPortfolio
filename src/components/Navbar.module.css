@@ -1,0 +1,127 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  padding: 40px 0;
+  opacity: 1;
+  pointer-events: all;
+  transition: opacity 0.4s ease-out, transform 0.4s ease-out, background 0.4s ease, backdrop-filter 0.4s ease, padding 0.4s ease;
+}
+
+.header.scrolled {
+  padding: 18px 0;
+}
+
+.navContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logoGroup {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(10px);
+  padding: 8px 16px;
+  border-radius: 40px;
+  transition: background-color 0.3s ease, opacity 0.4s ease, transform 0.4s ease;
+}
+
+.logoGroup:hover {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+.isLanding .logoGroup {
+  opacity: 0;
+  transform: translateY(-10px);
+  pointer-events: none;
+}
+
+.isLanding.scrolled .logoGroup {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: all;
+}
+
+.logoIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logoText {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 1.1rem;
+  letter-spacing: -0.5px;
+}
+
+.hamburger {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hamburger:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.hamburgerLines {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 20px;
+}
+
+.line {
+  height: 2px;
+  background-color: var(--text-primary);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.line:last-child {
+  width: 70%;
+  margin-left: auto;
+}
+
+/* Base mobile menu transition for later use */
+.mobileMenu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #F5F5F5;
+  z-index: 90;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(-100%);
+  transition: transform 0.6s cubic-bezier(0.85, 0, 0.15, 1);
+}
+
+.mobileMenu.open {
+  transform: translateY(0);
+}
+
+.mobileNavLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  text-align: center;
+  font-size: 2rem;
+  font-family: var(--font-sans);
+}

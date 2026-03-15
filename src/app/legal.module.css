@@ -1,0 +1,112 @@
+.legalSection {
+  width: 100%;
+  padding: 160px 24px 120px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+}
+
+.legalContainer {
+  max-width: 800px;
+  /* narrowed for better reading length */
+  width: 100%;
+  padding: 0;
+}
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #666;
+  text-decoration: none;
+  transition: color 0.2s ease, transform 0.2s ease;
+  margin-bottom: 40px;
+  font-family: var(--font-sans);
+}
+
+.backLink:hover {
+  color: #111;
+  transform: translateX(-4px);
+}
+
+.pageHeader {
+  margin-bottom: 64px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid var(--border-color);
+  text-align: left;
+  /* Shift to left for a more professional document feel */
+}
+
+.pageTitle {
+  font-family: var(--font-sans);
+  font-size: clamp(40px, 5vw, 64px);
+  font-weight: 500;
+  letter-spacing: -2px;
+  color: #111;
+  margin-bottom: 16px;
+}
+
+.pageSubtitle {
+  font-size: 16px;
+  color: var(--text-secondary);
+}
+
+.contentBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+  /* increased gap for breathability in long-form text */
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sectionTitle {
+  font-family: var(--font-sans);
+  font-size: 28px;
+  font-weight: 500;
+  color: #111;
+  letter-spacing: -0.5px;
+  margin-bottom: 8px;
+}
+
+.paragraph {
+  font-size: 16px;
+  line-height: 1.8;
+  /* improved readability */
+  color: #444;
+  /* slightly darker text against background for contrast */
+}
+
+.list {
+  padding-left: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.listItem {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #444;
+}
+
+@media (max-width: 768px) {
+  .legalSection {
+    padding: 120px 16px 80px;
+  }
+
+  .pageTitle {
+    font-size: 40px;
+  }
+
+  .contentBlock {
+    gap: 48px;
+  }
+}

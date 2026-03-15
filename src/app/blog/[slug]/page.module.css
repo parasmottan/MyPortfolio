@@ -1,0 +1,149 @@
+.main {
+  padding-top: 160px;
+  min-height: 100vh;
+}
+
+.progressBar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  background-color: var(--text-primary);
+  z-index: 1000;
+  transform-origin: left;
+  width: 100%;
+}
+
+.header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 60px auto;
+}
+
+.meta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 24px;
+}
+
+.title {
+  font-size: clamp(72px, 10vw, 96px);
+  font-family: var(--font-serif);
+  font-weight: 500;
+  line-height: 1.1;
+  margin-bottom: 40px;
+}
+
+.author {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: #ddd;
+}
+
+.authorInfo span {
+  display: block;
+}
+
+.authorName {
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.authorRole {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.content {
+  max-width: 720px;
+  margin: 0 auto 120px auto;
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: var(--text-primary);
+}
+
+.content p {
+  margin-bottom: 24px;
+}
+
+.content h2 {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  margin: 48px 0 24px 0;
+}
+
+.content h3 {
+  font-family: var(--font-sans);
+  font-size: 1.5rem;
+  margin: 40px 0 20px 0;
+}
+
+.content ul {
+  margin-bottom: 24px;
+  padding-left: 24px;
+}
+
+.content li {
+  margin-bottom: 12px;
+}
+
+.content blockquote {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-style: normal;
+  border-left: 4px solid var(--text-primary);
+  padding-left: 24px;
+  margin: 40px 0;
+  color: var(--text-secondary);
+}
+
+.featuredImage {
+  width: 100%;
+  aspect-ratio: 16/9;
+  background-color: #f0f0f0;
+  border-radius: var(--radius-md);
+  margin-bottom: 40px;
+}
+
+.imageCaption {
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-bottom: 40px;
+}
+
+.articleFooter {
+  display: flex;
+  background-color: #F5F5F5;
+  padding: 40px;
+  border-radius: var(--radius-md);
+  margin-top: 80px;
+  gap: 24px;
+  align-items: center;
+}
+
+.shareLinks {
+  margin-top: 16px;
+  display: flex;
+  gap: 16px;
+}
+
+.shareLinks a {
+  font-size: 0.85rem;
+  text-decoration: underline;
+  color: var(--text-secondary);
+}

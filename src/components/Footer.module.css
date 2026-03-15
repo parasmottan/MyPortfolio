@@ -1,0 +1,341 @@
+.footer {
+  background-color: var(--text-primary);
+  color: #fff;
+  padding: 100px 0 32px 0;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  margin-top: 80px;
+}
+
+.footerContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 50vh;
+}
+
+.topSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex-grow: 1;
+  justify-content: center;
+  margin-bottom: 80px;
+}
+
+.availability {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 6px 16px;
+  border-radius: 20px;
+  margin-bottom: 24px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  background-color: #4ade80;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.5);
+    opacity: 0.5;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.heading {
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-family: var(--font-sans);
+  font-weight: 500;
+  line-height: 1.1;
+  margin-bottom: 24px;
+}
+
+.italic {
+  font-family: var(--font-sans);
+  font-style: normal;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.subtext {
+  max-width: 480px;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.6;
+  margin-bottom: 40px;
+}
+
+.contactBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #fff;
+  color: var(--text-primary);
+  padding: 14px 32px;
+  border-radius: 40px;
+  font-weight: 500;
+  transition: transform 0.3s ease;
+}
+
+.contactBtn:hover {
+  transform: scale(1.05);
+}
+
+.bottomBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 32px;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.5);
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.links {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.links a {
+  transition: color 0.3s ease;
+}
+
+.links a:hover {
+  color: #fff;
+}
+
+.socials {
+  display: flex;
+  gap: 16px;
+}
+
+.socials a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.socials a:hover {
+  background-color: #fff;
+  color: var(--text-primary);
+}
+
+/* Response Toggles */
+.showOnMobile,
+.showOnMobileText,
+.showOnMobileIcon,
+.showOnMobileCopy,
+.showOnMobileLegal,
+.showOnMobileFlex,
+.mobileBtnIconLeft {
+  display: none !important;
+}
+
+/* ============================================================
+   MOBILE FOOTER OVERHAUL — PIXEL-PERFECT REF MATCH
+   Desktop styles above are NOT modified.
+   ============================================================ */
+@media (max-width: 768px) {
+  /* ── 1. Floating Footer Card ── */
+  .footer {
+    margin: 16px; /* Floating above the page background */
+    padding: 60px 24px 40px;
+    border-radius: 28px;
+    border: 1px solid rgba(255, 255, 255, 0.08); /* faint inner border */
+    /* Maintain dark background from desktop */
+    margin-bottom: 24px;
+    min-height: 97svh; /* User requested near full viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  /* Toggles execution */
+  .hideOnMobile,
+  .hideOnMobileFlex {
+    display: none !important;
+  }
+
+  .showOnMobile,
+  .showOnMobileText,
+  .showOnMobileCopy,
+  .showOnMobileLegal {
+    display: inline !important;
+  }
+
+  .showOnMobileIcon {
+    display: block !important;
+  }
+
+  .showOnMobileFlex {
+    display: flex !important;
+  }
+
+  /* ── 2. Top Section Alignment ── */
+  .topSection {
+    margin-bottom: 80px;
+  }
+
+  /* ── 3. Availability Badge (Text with side lines) ── */
+  .availability {
+    border: none; /* Remove desktop pill border */
+    padding: 0;
+    gap: 16px;
+    font-size: 18px;
+    font-family: Georgia, "Times New Roman", serif; /* Match italic serif from reference */
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 32px;
+  }
+
+  .dot {
+    display: none; /* Hide the green dot on mobile */
+  }
+
+  /* Add the thin lines extending out on mobile */
+  .availability::before,
+  .availability::after {
+    content: "";
+    display: block;
+    width: 40px;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  /* ── 4. Heading & Subtext ── */
+  .heading {
+    font-size: 48px;
+    font-weight: 500;
+    letter-spacing: -1.5px;
+    margin-bottom: 16px;
+  }
+
+  .italic {
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  .subtext {
+    font-size: 15px;
+    line-height: 1.5;
+    max-width: 300px;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 48px;
+  }
+
+  /* ── 5. Contact CTA Button with "Halo" Effect ── */
+  .contactBtn {
+    height: 56px;
+    padding: 0 20px 0 10px; /* asymmetrical padding to account for the circle on left */
+    font-size: 15px;
+    font-weight: 500;
+    gap: 12px;
+    background: #000;
+    color: #fff;
+    /* Create the thick grey border/container illusion strictly via shadow */
+    box-shadow: 0 0 0 14px rgba(255, 255, 255, 0.2);
+    border-radius: 999px;
+  }
+
+  .mobileBtnIconLeft {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    background: #fff;
+    border-radius: 50%;
+  }
+
+  /* Ensure SVG icon is white on mobile for the right arrow */
+  .contactBtn .showOnMobileIcon {
+    color: #fff;
+    opacity: 0.8;
+    margin-left: 2px;
+  }
+
+  /* ── 6. Bottom Bar Structure ── */
+  .bottomBar {
+    flex-direction: column;
+    border-top: none; /* Remove full width top border from desktop */
+    padding-top: 0;
+    gap: 40px;
+  }
+
+  .links {
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    width: 100%;
+  }
+
+  /* Copyright text gets lines top and bottom */
+  .links span {
+    font-size: 15px;
+    font-weight: 500;
+    color: #fff;
+    padding: 16px 0;
+    width: 200px;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    margin-bottom: 8px; /* Space between copyright and legal links */
+  }
+
+  /* Legal/Privacy links row */
+  .links .legalLink {
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  /* Make Legal and Privacy sit on the same row */
+  .links {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    column-gap: 16px;
+    row-gap: 32px;
+  }
+
+  .links span {
+    flex-basis: 100%; /* Force copyright onto its own full-width line */
+  }
+
+  /* ── 7. Social Icons ── */
+  .socials {
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .socials a {
+    width: 48px;
+    height: 48px;
+    border-color: rgba(255, 255, 255, 0.15);
+    color: rgba(255, 255, 255, 0.7);
+  }
+}
