@@ -122,8 +122,8 @@ export default function Home() {
     }, 200);
   };
 
-  // Clone marquee tracks
   useEffect(() => {
+    if (!mounted) return;
     const clone = (ref: React.RefObject<HTMLDivElement | null>) => {
       if (!ref.current) return;
       Array.from(ref.current.children as HTMLCollectionOf<HTMLElement>).forEach((child) => {
@@ -134,10 +134,10 @@ export default function Home() {
     };
     clone(leftScreenRef);
     clone(rightScreenRef);
-  }, []);
+  }, [mounted]);
 
-  // Hero entrance
   useEffect(() => {
+    if (!mounted) return;
     gsap.registerPlugin(ScrollTrigger);
     const tl = gsap.timeline();
     tl.fromTo(heroRef.current, { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power2.out" })
@@ -158,10 +158,10 @@ export default function Home() {
       });
     }
     return () => { ScrollTrigger.getAll().forEach(t => t.kill()); };
-  }, []);
+  }, [mounted]);
 
-  // Feature Grid sequence
   useEffect(() => {
+    if (!mounted) return;
     gsap.registerPlugin(ScrollTrigger);
     if (!featureGridRef.current || !fgItemsRef.current) return;
     const items = gsap.utils.toArray(fgItemsRef.current.querySelectorAll(`.${styles.fgItemWrapper}`));
@@ -177,10 +177,10 @@ export default function Home() {
       stagger: 0.1,
       ease: "power2.out"
     });
-  }, []);
+  }, [mounted]);
 
-  // Showcase entrance
   useEffect(() => {
+    if (!mounted) return;
     gsap.registerPlugin(ScrollTrigger);
     if (!showcaseRef.current) return;
     
@@ -197,10 +197,10 @@ export default function Home() {
     }
     
     gsap.to(floatingLabelRef.current, { y: "-=8", duration: 3, ease: "sine.inOut", yoyo: true, repeat: -1 });
-  }, []);
+  }, [mounted]);
 
-  // ── Services: pill entry from edges + float + per-char scroll color ──────
   useEffect(() => {
+    if (!mounted) return;
     gsap.registerPlugin(ScrollTrigger);
     if (!servicesSectionRef.current) return;
 
@@ -266,7 +266,7 @@ export default function Home() {
         },
       });
     }
-  }, []);
+  }, [mounted]);
 
   // Floating animation helper
   function startFloating(pills: HTMLElement[]) {
@@ -282,8 +282,8 @@ export default function Home() {
     });
   }
 
-  // ── Process Section: Premium Stagger Reveal ──────────────────
   useEffect(() => {
+    if (!mounted) return;
     gsap.registerPlugin(ScrollTrigger);
     if (!processSectionRef.current) return;
     const cards = Array.from(processCardsRef.current?.children || []) as HTMLElement[];
@@ -317,10 +317,10 @@ export default function Home() {
         });
       }
     });
-  }, []);
+  }, [mounted]);
 
-  // ── Case Studies Section: Stagger Reveal ──────────────
   useEffect(() => {
+    if (!mounted) return;
     gsap.registerPlugin(ScrollTrigger);
     if (!caseStudiesSectionRef.current) return;
     const cards = Array.from(caseStudiesCardsRef.current?.children || []) as HTMLElement[];
@@ -343,11 +343,11 @@ export default function Home() {
         });
       }
     });
-  }, []);
+  }, [mounted]);
 
 
-  // ── Founder Section: Slide In Front-to-center ─────────────
   useEffect(() => {
+    if (!mounted) return;
     gsap.registerPlugin(ScrollTrigger);
     if (!fndrSectionRef.current || !fndrLeftRef.current || !fndrRightRef.current) return;
 
@@ -380,10 +380,10 @@ export default function Home() {
         }
       }
     );
-  }, []);
+  }, [mounted]);
 
-  // ── Global Typography Reveal: blur → clear on scroll ─────────────
   useEffect(() => {
+    if (!mounted) return;
     gsap.registerPlugin(ScrollTrigger);
 
     // All h2, h3, p, blockquote — skip anything inside the hero section
@@ -440,7 +440,7 @@ export default function Home() {
 
     // Only kill triggers created by THIS effect on cleanup
     return () => triggers.forEach((t) => t.kill());
-  }, []);
+  }, [mounted]);
   if (!mounted) {
     return (
       <main className={styles.main}>
