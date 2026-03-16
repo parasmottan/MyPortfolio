@@ -43,7 +43,7 @@ export default function Footer() {
         <div className={styles.bottomBar}>
           <div className={styles.links}>
             <span className={styles.hideOnMobile}>© Paras Mottan, 2026</span>
-            <span className={styles.showOnMobileCopy}>© Denqid, 2025</span>
+            <span className={styles.showOnMobileCopy}>© Paras Mottan, 2026</span>
             <Link href="/terms-and-conditions" className={styles.legalLink}>
               <span className={styles.hideOnMobile}>Terms &amp; Conditions</span>
               <span className={styles.showOnMobileLegal}>Legal Notice</span>

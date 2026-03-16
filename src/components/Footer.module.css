@@ -279,55 +279,43 @@
 
   /* ── 6. Bottom Bar Structure ── */
   .bottomBar {
+    width: 100%;
     flex-direction: column;
     border-top: none; /* Remove full width top border from desktop */
     padding-top: 0;
     gap: 40px;
+    align-items: center;
+    text-align: center;
   }
 
+  /* Make Legal and Privacy sit on the same row */
   .links {
-    flex-direction: column;
-    align-items: center;
-    gap: 24px;
     width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    column-gap: 24px;
+    row-gap: 32px;
+    align-items: center;
   }
 
   /* Copyright text gets lines top and bottom */
   .links span {
+    flex-basis: 100%; /* Force copyright onto its own full-width line */
     font-size: 15px;
     font-weight: 500;
     color: #fff;
     padding: 16px 0;
-    width: 200px;
     text-align: center;
     border-top: 1px solid rgba(255, 255, 255, 0.15);
     border-bottom: 1px solid rgba(255, 255, 255, 0.15);
     margin-bottom: 8px; /* Space between copyright and legal links */
   }
 
-  /* Legal/Privacy links row */
-  .links .legalLink {
-    color: rgba(255, 255, 255, 0.4);
-    font-size: 14px;
-    font-weight: 500;
-  }
-
-  /* Make Legal and Privacy sit on the same row */
-  .links {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    flex-wrap: wrap;
-    column-gap: 16px;
-    row-gap: 32px;
-  }
-
-  .links span {
-    flex-basis: 100%; /* Force copyright onto its own full-width line */
-  }
-
   /* ── 7. Social Icons ── */
   .socials {
+    width: 100%;
     justify-content: center;
     gap: 20px;
   }

@@ -333,11 +333,11 @@ export default function CaseStudy() {
         </section>
 
         {/* 10. CALL TO ACTION */}
-        <div style={{ marginTop: '80px', marginBottom: '80px', display: 'flex', gap: '16px', justifyContent: 'center' }}>
-          <a href={data.liveLink || "#"} target={data.liveLink ? "_blank" : undefined} rel={data.liveLink ? "noopener noreferrer" : undefined} className={styles.ctaBtn} style={{ padding: '16px 32px', backgroundColor: '#000', color: '#fff', borderRadius: '40px', fontWeight: 500, display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
+        <div className={styles.ctaContainer} ref={addToRefs}>
+          <a href={data.liveLink || "#"} target={data.liveLink ? "_blank" : undefined} rel={data.liveLink ? "noopener noreferrer" : undefined} className={styles.ctaBtn}>
             View Live Project <ArrowRight size={18} />
           </a>
-          <a href={data.sourceLink || process.env.NEXT_PUBLIC_SOCIAL_GITHUB || "https://github.com/parasmottan"} target="_blank" rel="noopener noreferrer" className={styles.ctaBtnOutline} style={{ padding: '16px 32px', border: '1px solid #e0e0e0', color: '#000', borderRadius: '40px', fontWeight: 500, display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
+          <a href={data.sourceLink || process.env.NEXT_PUBLIC_SOCIAL_GITHUB || "https://github.com/parasmottan"} target="_blank" rel="noopener noreferrer" className={styles.ctaBtnOutline}>
             View Source Code <ArrowRight size={18} />
           </a>
         </div>
