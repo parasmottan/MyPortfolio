@@ -51,7 +51,7 @@ export default function Contact() {
         setSelectedTime(null);
         try {
           const dateStr = format(selectedDate, "yyyy-MM-dd");
-          const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/available-slots?date=${dateStr}&timezone=${encodeURIComponent(timezone)}`);
+          const res = await fetch(`/api/available-slots?date=${dateStr}&timezone=${encodeURIComponent(timezone)}`);
           const data = await res.json();
           if (data.availableSlots) {
             setAvailableSlots(data.availableSlots);
@@ -89,7 +89,7 @@ export default function Contact() {
     setIsSubmitting(true);
 
     try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/book-call`, {
+      const res = await fetch(`/api/book-call`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -116,7 +116,7 @@ export default function Contact() {
         // If conflict (409 Double Booking Prevention), refresh slot list
         if (res.status === 409) {
           const dateStr = format(selectedDate, "yyyy-MM-dd");
-          const freshSlots = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/available-slots?date=${dateStr}&timezone=${encodeURIComponent(timezone)}`).then(r => r.json());
+          const freshSlots = await fetch(`/api/available-slots?date=${dateStr}&timezone=${encodeURIComponent(timezone)}`).then(r => r.json());
           if (freshSlots.availableSlots) setAvailableSlots(freshSlots.availableSlots);
           setSelectedTime(null);
         }
