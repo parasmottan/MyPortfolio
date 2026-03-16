@@ -24,34 +24,6 @@
   max-width: 100%;
 }
 
-@media (max-width: 768px) {
-  .hero {
-    min-height: auto;
-    justify-content: flex-start;
-    padding-top: 100px; /* Pulls everything closer to navbar */
-    padding-bottom: 0px; /* Removes gap above showcase */
-  }
-
-  .heroTitle {
-    margin: 25px auto 25px; /* Pulls heading closer to badge and subtitle */
-  }
-
-  .heroSubtitle {
-    margin-bottom: 25px; /* Pulls CTA button closer to subtitle text */
-  }
-  
-  .showcaseSection {
-    padding: 32px 20px 80px 20px; /* Greatly reduces gap between CTA and showcase container */
-  }
-
-  .heroImageCard {
-    max-width: 35%;
-  }
-
-  .heroToolCard {
-    max-width: 35%;
-  }
-}
 
 .availabilityBadge {
   display: inline-flex;
@@ -100,23 +72,12 @@
   margin-top: 50px;
 }
 
-@media (max-width: 768px) {
-  .heroWordMain, .heroWordMuted {
-    font-size: clamp(48px, 15vw, 80px);
-    letter-spacing: -2px;
-  }
-}
 
 .heroWordFast {
   margin-right: 10px;
   margin-left: -60px;
 }
 
-@media (max-width: 768px) {
-  .heroWordFast {
-    margin-left: 0;
-  }
-}
 
 .heroSubtitle {
   margin: 0 auto 60px;
@@ -734,21 +695,6 @@
   }
 }
 
-@media (max-width: 960px) {
-
-  .servLeftPills,
-  .servRightPills {
-    display: none;
-  }
-
-  .servCenter {
-    max-width: 92%;
-  }
-
-  .servHeading {
-    font-size: clamp(30px, 6vw, 44px);
-  }
-}
 
 /* =====================================================
    PROCESS / WORKFLOW SECTION — Premium Redesign

@@ -157,13 +157,4 @@ canvas {
     flex-wrap: wrap !important;
   }
 
-  h1, h2, h3, h4, h5, h6 {
-    text-align: center !important;
-    white-space: normal !important;
-    overflow-wrap: break-word !important;
-    word-break: normal !important;
-    max-width: 100% !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-  }
 }
