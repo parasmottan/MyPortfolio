@@ -138,7 +138,6 @@ export default function Home() {
 
   // Hero entrance
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
     const tl = gsap.timeline();
     tl.fromTo(heroRef.current, { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power2.out" })
       .fromTo(
@@ -157,12 +156,13 @@ export default function Home() {
         stagger: { each: 1, from: "start" }
       });
     }
-    return () => { ScrollTrigger.getAll().forEach(t => t.kill()); };
-  }, []);
+    return () => {
+      tl.kill();
+    };
+  }, [mounted]);
 
   // Feature Grid sequence
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
     if (!featureGridRef.current || !fgItemsRef.current) return;
     const items = gsap.utils.toArray(fgItemsRef.current.querySelectorAll(`.${styles.fgItemWrapper}`));
     gsap.to(items, {
@@ -177,11 +177,10 @@ export default function Home() {
       stagger: 0.1,
       ease: "power2.out"
     });
-  }, []);
+  }, [mounted]);
 
   // Showcase entrance
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
     if (!showcaseRef.current) return;
     
     const isMobile = window.innerWidth <= 768;
@@ -197,11 +196,10 @@ export default function Home() {
     }
     
     gsap.to(floatingLabelRef.current, { y: "-=8", duration: 3, ease: "sine.inOut", yoyo: true, repeat: -1 });
-  }, []);
+  }, [mounted]);
 
   // ── Services: pill entry from edges + float + per-char scroll color ──────
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
     if (!servicesSectionRef.current) return;
 
     const leftPills = Array.from(servicesLeftPillsRef.current?.children || []) as HTMLElement[];
@@ -266,7 +264,7 @@ export default function Home() {
         },
       });
     }
-  }, []);
+  }, [mounted]);
 
   // Floating animation helper
   function startFloating(pills: HTMLElement[]) {
@@ -284,7 +282,6 @@ export default function Home() {
 
   // ── Process Section: Premium Stagger Reveal ──────────────────
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
     if (!processSectionRef.current) return;
     const cards = Array.from(processCardsRef.current?.children || []) as HTMLElement[];
     const staggerDelays = [0, 0.1, 0.2, 0.3];
@@ -317,11 +314,10 @@ export default function Home() {
         });
       }
     });
-  }, []);
+  }, [mounted]);
 
   // ── Case Studies Section: Stagger Reveal ──────────────
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
     if (!caseStudiesSectionRef.current) return;
     const cards = Array.from(caseStudiesCardsRef.current?.children || []) as HTMLElement[];
 
@@ -343,12 +339,11 @@ export default function Home() {
         });
       }
     });
-  }, []);
+  }, [mounted]);
 
 
   // ── Founder Section: Slide In Front-to-center ─────────────
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
     if (!fndrSectionRef.current || !fndrLeftRef.current || !fndrRightRef.current) return;
 
     gsap.fromTo(fndrLeftRef.current,
@@ -380,11 +375,11 @@ export default function Home() {
         }
       }
     );
-  }, []);
+  }, [mounted]);
 
   // ── Global Typography Reveal: blur → clear on scroll ─────────────
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
+    // All h2, h3, p, blockquote — skip anything inside the hero section
 
     // All h2, h3, p, blockquote — skip anything inside the hero section
     const heroEl = document.querySelector(`.${styles.hero}`);
@@ -440,6 +435,14 @@ export default function Home() {
 
     // Only kill triggers created by THIS effect on cleanup
     return () => triggers.forEach((t) => t.kill());
+  }, [mounted]);
+
+  // Ensure all ScrollTriggers are refreshed after total mount
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      ScrollTrigger.refresh();
+    }, 1200);
+    return () => clearTimeout(timer);
   }, []);
   if (!mounted) {
     return (

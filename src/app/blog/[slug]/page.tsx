@@ -156,6 +156,7 @@ export default function SingleBlog() {
   const params = useParams();
   const slug = params.slug as string;
 
+  const [mounted, setMounted] = useState(false);
   const [progress, setProgress] = useState(0);
   const sectionsRef = useRef<(HTMLElement | null)[]>([]);
 
@@ -163,7 +164,11 @@ export default function SingleBlog() {
   const title = post?.title || (slug ? slug.charAt(0).toUpperCase() + slug.slice(1).replace(/-/g, ' ') : 'Article');
 
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
+    setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (!mounted) return;
 
     const handleScroll = () => {
       const scrollPx = document.documentElement.scrollTop;
@@ -195,15 +200,21 @@ export default function SingleBlog() {
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
-      ScrollTrigger.getAll().forEach(t => t.kill());
+      ScrollTrigger.getAll().forEach(t => {
+        if (t.vars.trigger && sectionsRef.current.includes(t.vars.trigger as HTMLElement)) {
+          t.kill();
+        }
+      });
     };
-  }, []);
+  }, [mounted]);
 
   const addToRefs = (el: HTMLElement | null) => {
     if (el && !sectionsRef.current.includes(el)) {
       sectionsRef.current.push(el);
     }
   };
+
+  if (!mounted) return <div style={{ minHeight: '100vh', background: '#fff' }} />;
 
   return (
     <main className={styles.main}>

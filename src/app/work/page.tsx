@@ -20,16 +20,18 @@ const FILTERS = ["All", "Web Design", "MVP", "Branding"];
 
 export default function Work() {
   const [activeFilter, setActiveFilter] = useState("All");
+  const [mounted, setMounted] = useState(false);
   const cardsRef = useRef<(HTMLAnchorElement | null)[]>([]);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const filteredProjects = activeFilter === "All"
     ? PROJECTS
     : PROJECTS.filter(p => p.cat === activeFilter);
 
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-
-    ScrollTrigger.getAll().forEach(t => t.kill());
 
     cardsRef.current.forEach((card, index) => {
       if (!card) return;
@@ -51,9 +53,15 @@ export default function Work() {
     });
 
     return () => {
-      ScrollTrigger.getAll().forEach(t => t.kill());
+      ScrollTrigger.getAll().forEach(t => {
+        if (t.vars.trigger && cardsRef.current.includes(t.vars.trigger as HTMLAnchorElement)) {
+          t.kill();
+        }
+      });
     };
-  }, [filteredProjects]);
+  }, [filteredProjects, mounted]);
+
+  if (!mounted) return <div style={{ minHeight: '100vh', background: '#fff' }} />;
 
   return (
     <main className={styles.main}>

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useParams } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
@@ -156,14 +156,18 @@ export default function CaseStudy() {
   const params = useParams();
   const slug = decodeURIComponent(params.slug as string);
 
-  // Lookup data based on dynamic slug, fallback to a safe default structure if not found
+  const [mounted, setMounted] = useState(false);
   const data = PROJECT_DATA[slug] || PROJECT_DATA["memorie"];
 
   const heroImgRef = useRef<HTMLDivElement>(null);
   const sectionsRef = useRef<(HTMLElement | null)[]>([]);
 
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
+    setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (!mounted) return;
 
     // Parallax Hero
     if (heroImgRef.current) {
@@ -200,15 +204,21 @@ export default function CaseStudy() {
     });
 
     return () => {
-      ScrollTrigger.getAll().forEach(t => t.kill());
+      ScrollTrigger.getAll().forEach(t => {
+        if (t.vars.trigger && (t.vars.trigger === heroImgRef.current || sectionsRef.current.includes(t.vars.trigger as HTMLElement))) {
+          t.kill();
+        }
+      });
     };
-  }, [slug]); // Re-run animations if slug somehow hot-swaps
+  }, [mounted, slug]);
 
   const addToRefs = (el: HTMLElement | null) => {
     if (el && !sectionsRef.current.includes(el)) {
       sectionsRef.current.push(el);
     }
   };
+
+  if (!mounted) return <div style={{ minHeight: '100vh', background: '#fff' }} />;
 
   return (
     <main className={styles.main}>

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import gsap from "gsap";
@@ -16,11 +16,16 @@ const TIMELINE = [
 
 export default function About() {
   const portraitRef = useRef<HTMLDivElement>(null);
+  const [mounted, setMounted] = useState(false);
   const timelineRefs = useRef<(HTMLDivElement | null)[]>([]);
   const sectionsRef = useRef<(HTMLElement | null)[]>([]);
 
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
+    setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (!mounted) return;
 
     // Portrait Float
     if (portraitRef.current) {
@@ -50,9 +55,10 @@ export default function About() {
     });
 
     // Section reveals
+    const triggers: ScrollTrigger[] = [];
     sectionsRef.current.forEach((section) => {
       if (!section) return;
-      gsap.fromTo(
+      const t = gsap.fromTo(
         section,
         { opacity: 0, y: 50 },
         {
@@ -66,19 +72,22 @@ export default function About() {
             toggleActions: "play none none reverse",
           },
         }
-      );
+      ).scrollTrigger;
+      if (t) triggers.push(t);
     });
 
     return () => {
-      ScrollTrigger.getAll().forEach(t => t.kill());
+      triggers.forEach(t => t.kill());
     };
-  }, []);
+  }, [mounted]);
 
   const addToRefs = (el: HTMLElement | null) => {
     if (el && !sectionsRef.current.includes(el)) {
       sectionsRef.current.push(el);
     }
   };
+
+  if (!mounted) return <div style={{ minHeight: '100vh', background: '#fff' }} />;
 
   return (
     <main className={styles.main}>
@@ -95,14 +104,16 @@ export default function About() {
               <ArrowDown size={18} /> Scroll to explore
             </a>
           </div>
-          <div className={styles.portraitWrap} ref={portraitRef} style={{ position: 'relative', overflow: 'hidden', borderRadius: '24px' }}>
-            <Image
-              src="/founder.jpg"
-              alt="Paras Mottan"
-              fill
-              style={{ objectFit: 'cover', objectPosition: 'center' }}
-              sizes="(max-width: 960px) 100%, 50vw"
-            />
+          <div className={styles.portraitWrap} portrait-ref="true" style={{ position: 'relative', overflow: 'hidden', borderRadius: '24px' }}>
+            <div ref={portraitRef} style={{ width: '100%', height: '100%', position: 'absolute' }}>
+               <Image
+                src="/founder.jpg"
+                alt="Paras Mottan"
+                fill
+                style={{ objectFit: 'cover', objectPosition: 'center' }}
+                sizes="(max-width: 960px) 100%, 50vw"
+              />
+            </div>
           </div>
         </div>
 

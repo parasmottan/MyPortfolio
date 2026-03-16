@@ -9,12 +9,11 @@ interface SmoothScrollProps {
   children: ReactNode;
 }
 
+gsap.registerPlugin(ScrollTrigger);
+
 export default function SmoothScroll({ children }: SmoothScrollProps) {
   useEffect(() => {
-    // 1. Register ScrollTrigger
-    gsap.registerPlugin(ScrollTrigger);
-
-    // 2. Initialize Lenis
+    // 1. Initialize Lenis
     const lenis = new Lenis({
       duration: 1.2,
       smoothWheel: true,
@@ -23,7 +22,9 @@ export default function SmoothScroll({ children }: SmoothScrollProps) {
     } as any);
 
     // 3. Sync Lenis with ScrollTrigger
-    lenis.on("scroll", ScrollTrigger.update);
+    lenis.on("scroll", () => {
+      ScrollTrigger.update();
+    });
 
     // 4. Use GSAP ticker instead of requestAnimationFrame
     function raf(time: number) {
@@ -38,10 +39,10 @@ export default function SmoothScroll({ children }: SmoothScrollProps) {
     // 6. Reset scroll to top on mount to ensure triggers align
     window.scrollTo(0, 0);
 
-    // 7. Refresh ScrollTrigger after components mount
+    // 8. Refresh ScrollTrigger after components mount
     const timer = setTimeout(() => {
       ScrollTrigger.refresh();
-    }, 200);
+    }, 1000);
 
     return () => {
       gsap.ticker.remove(raf);

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import gsap from "gsap";
@@ -20,10 +20,15 @@ const POSTS = [
 
 export default function Blog() {
   const featuredRef = useRef<HTMLAnchorElement>(null);
+  const [mounted, setMounted] = useState(false);
   const cardsRef = useRef<(HTMLAnchorElement | null)[]>([]);
 
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
+    setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (!mounted) return;
 
     if (featuredRef.current) {
       gsap.to(featuredRef.current, {
@@ -53,9 +58,15 @@ export default function Blog() {
     });
 
     return () => {
-      ScrollTrigger.getAll().forEach(t => t.kill());
+      ScrollTrigger.getAll().forEach(t => {
+        if (t.vars.trigger && (t.vars.trigger === featuredRef.current || cardsRef.current.includes(t.vars.trigger as HTMLAnchorElement))) {
+          t.kill();
+        }
+      });
     };
-  }, []);
+  }, [mounted]);
+
+  if (!mounted) return <div style={{ minHeight: '100vh', background: '#fff' }} />;
 
   return (
     <main className={styles.main}>

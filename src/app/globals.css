@@ -6,6 +6,10 @@ html.lenis {
   height: auto;
 }
 
+/* ─────────────────────────────────────────────────────────────
+   SELECTIVE MOBILE OVERFLOW GUARDS 
+   ───────────────────────────────────────────────────────────── */
+
 .lenis.lenis-smooth {
   scroll-behavior: auto;
 }
