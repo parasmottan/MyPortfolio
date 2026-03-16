@@ -63,7 +63,7 @@ export default function CaseStudies({
                   alt={project.title} 
                   fill 
                   style={{ objectFit: "cover", objectPosition: "top" }} 
-                  sizes="(max-width: 960px) 100vw, 50vw" 
+                  sizes="(max-width: 960px) 100%, 50vw" 
                 />
                 <div className={styles.monitorReflection} />
               </div>

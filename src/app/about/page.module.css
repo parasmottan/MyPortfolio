@@ -29,6 +29,13 @@
   max-width: 500px;
 }
 
+@media (max-width: 900px) {
+  .heroLeft {
+    text-align: center;
+    margin: 0 auto;
+  }
+}
+
 .label {
   font-size: 0.85rem;
   color: var(--text-secondary);
@@ -39,10 +46,10 @@
 }
 
 .title {
-  font-size: clamp(42px, 10vw, 96px);
+  font-size: clamp(32px, 10vw, 96px);
   font-family: var(--font-sans);
   font-weight: 500;
-  line-height: 1.1;
+  line-height: 1.12;
   margin-bottom: 24px;
 }
 
@@ -51,6 +58,13 @@
   line-height: 1.6;
   font-size: 1.1rem;
   margin-bottom: 40px;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .downloadBtn {
+    margin: 0 auto;
+  }
 }
 
 .downloadBtn {
@@ -109,9 +123,10 @@
 }
 
 .philosophyText {
-  font-size: clamp(24px, 4vw, 36px);
+  font-size: clamp(20px, 4vw, 36px);
   font-family: var(--font-sans);
-  line-height: 1.4;
+  line-height: 1.5;
+  text-align: center;
 }
 
 /* JOURNEY TIMELINE */

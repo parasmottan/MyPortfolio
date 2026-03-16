@@ -101,7 +101,7 @@ export default function About() {
               alt="Paras Mottan"
               fill
               style={{ objectFit: 'cover', objectPosition: 'center' }}
-              sizes="(max-width: 960px) 100vw, 50vw"
+              sizes="(max-width: 960px) 100%, 50vw"
             />
           </div>
         </div>

@@ -45,11 +45,11 @@
   }
 
   .heroImageCard {
-    max-width: 35vw;
+    max-width: 35%;
   }
 
   .heroToolCard {
-    max-width: 35vw;
+    max-width: 35%;
   }
 }
 
@@ -100,29 +100,22 @@
   margin-top: 50px;
 }
 
-.heroWordMain {
-  font-family: var(--font-sans);
-  font-weight: 800;
-  letter-spacing: -8px;
-  font-size: 160px;
-  color: #000;
-  position: relative;
-  z-index: 3;
-}
-
-.heroWordMuted {
-  font-family: var(--font-sans);
-  font-weight: 400;
-  letter-spacing: -6px;
-  font-size: 160px;
-  color: #8a8a8a;
-  position: relative;
-  z-index: 1;
+@media (max-width: 768px) {
+  .heroWordMain, .heroWordMuted {
+    font-size: clamp(48px, 15vw, 80px);
+    letter-spacing: -2px;
+  }
 }
 
 .heroWordFast {
   margin-right: 10px;
   margin-left: -60px;
+}
+
+@media (max-width: 768px) {
+  .heroWordFast {
+    margin-left: 0;
+  }
 }
 
 .heroSubtitle {
@@ -686,7 +679,7 @@
 .servCenter {
   text-align: center;
   max-width: 720px;
-  width: 90vw;
+  width: 90%;
   position: relative;
   z-index: 2;
 }
@@ -720,7 +713,7 @@
 .servHeading {
   font-family: var(--font-sans);
   /* At 720px container, 56px Inter 700 wraps as spec: 5 natural lines */
-  font-size: clamp(38px, 4vw, 56px);
+  font-size: clamp(28px, 8vw, 56px);
   font-weight: 500;
   line-height: 1.12;
   letter-spacing: -2px;
@@ -749,7 +742,7 @@
   }
 
   .servCenter {
-    max-width: 92vw;
+    max-width: 92%;
   }
 
   .servHeading {

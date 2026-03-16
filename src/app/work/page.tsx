@@ -96,7 +96,7 @@ export default function Work() {
                   alt={project.title}
                   fill
                   style={{ objectFit: 'cover' }}
-                  sizes="(max-width: 768px) 100vw, 50vw"
+                  sizes="(max-width: 768px) 100%, 50vw"
                 />
               </div>
               <div className={styles.meta}>

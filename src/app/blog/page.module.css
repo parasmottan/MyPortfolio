@@ -22,6 +22,18 @@
   margin-bottom: 24px;
 }
 
+@media (max-width: 768px) {
+  .header {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 100% !important;
+  }
+}
+
 .dot {
   width: 6px;
   height: 6px;
@@ -31,7 +43,7 @@
 }
 
 .title {
-  font-size: clamp(72px, 10vw, 96px);
+  font-size: clamp(32px, 10vw, 96px);
   font-family: var(--font-sans);
   font-weight: 500;
   line-height: 1.1;
@@ -63,6 +75,20 @@
   color: #fff;
   opacity: 0;
   transform: translateY(40px);
+}
+
+@media (max-width: 768px) {
+  .featuredPost {
+    aspect-ratio: auto !important;
+    min-height: 450px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .featuredPost {
+    aspect-ratio: auto;
+    min-height: 400px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -112,7 +138,18 @@
 
 @media (max-width: 768px) {
   .featuredContent {
-    padding: 32px;
+    position: relative !important;
+    padding: 32px 16px !important;
+    background: #2f4f4f !important;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: auto !important;
+    width: 100% !important;
+    bottom: auto !important;
+    left: auto !important;
   }
 }
 
@@ -126,10 +163,15 @@
 }
 
 .featuredTitle {
-  font-size: clamp(48px, 6vw, 64px);
+  font-size: clamp(20px, 8vw, 42px) !important;
   font-family: var(--font-sans);
   margin-bottom: 16px;
-  max-width: 800px;
+  max-width: 100%;
+  white-space: normal !important;
+  overflow-wrap: break-word !important;
+  word-wrap: break-word !important;
+  line-height: 1.2;
+  text-align: center;
 }
 
 .featuredDesc {
@@ -164,6 +206,8 @@
   gap: 20px;
   opacity: 0;
   transform: translateY(40px);
+  width: 100%;
+  max-width: 100%;
 }
 
 .imageWrap {
@@ -198,9 +242,14 @@
 }
 
 .postTitle {
-  font-size: 1.25rem;
+  font-size: clamp(18px, 5vw, 28px);
   font-weight: 500;
   margin-bottom: 8px;
+  white-space: normal;
+  word-break: normal;
+  overflow-wrap: break-word;
+  line-height: 1.25;
+  flex-shrink: 0;
 }
 
 .postDesc {

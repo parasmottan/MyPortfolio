@@ -39,7 +39,7 @@ export default function Founder({
               fill
               className={styles.fndrImage}
               style={{ objectFit: "cover", objectPosition: "center" }}
-              sizes="(max-width: 960px) 100vw, 50vw"
+              sizes="(max-width: 960px) 100%, 50vw"
             />
           </div>
           <div className={styles.fndrMeta}>

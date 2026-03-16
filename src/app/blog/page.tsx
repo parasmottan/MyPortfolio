@@ -105,7 +105,7 @@ export default function Blog() {
             >
               <div className={styles.imageWrap}>
                 {post.image ? (
-                  <Image src={post.image} alt={post.title} fill style={{ objectFit: 'cover' }} sizes="(max-width: 768px) 100vw, 50vw" />
+                  <Image src={post.image} alt={post.title} fill style={{ objectFit: 'cover' }} sizes="(max-width: 768px) 100%, 50vw" />
                 ) : (
                   <div style={{ width: '100%', height: '100%', backgroundColor: '#e2e2e2' }}></div>
                 )}
