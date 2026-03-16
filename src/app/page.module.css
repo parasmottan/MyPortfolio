@@ -24,6 +24,34 @@
   max-width: 100%;
 }
 
+@media (max-width: 768px) {
+  .hero {
+    min-height: auto;
+    justify-content: flex-start;
+    padding-top: 100px; /* Pulls everything closer to navbar */
+    padding-bottom: 0px; /* Removes gap above showcase */
+  }
+
+  .heroTitle {
+    margin: 25px auto 25px; /* Pulls heading closer to badge and subtitle */
+  }
+
+  .heroSubtitle {
+    margin-bottom: 25px; /* Pulls CTA button closer to subtitle text */
+  }
+  
+  .showcaseSection {
+    padding: 32px 20px 80px 20px; /* Greatly reduces gap between CTA and showcase container */
+  }
+
+  .heroImageCard {
+    max-width: 35vw;
+  }
+
+  .heroToolCard {
+    max-width: 35vw;
+  }
+}
 
 .availabilityBadge {
   display: inline-flex;
@@ -72,12 +100,30 @@
   margin-top: 50px;
 }
 
+.heroWordMain {
+  font-family: var(--font-sans);
+  font-weight: 800;
+  letter-spacing: -8px;
+  font-size: 160px;
+  color: #000;
+  position: relative;
+  z-index: 3;
+}
+
+.heroWordMuted {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  letter-spacing: -6px;
+  font-size: 160px;
+  color: #8a8a8a;
+  position: relative;
+  z-index: 1;
+}
 
 .heroWordFast {
   margin-right: 10px;
   margin-left: -60px;
 }
-
 
 .heroSubtitle {
   margin: 0 auto 60px;
@@ -640,7 +686,7 @@
 .servCenter {
   text-align: center;
   max-width: 720px;
-  width: 90%;
+  width: 90vw;
   position: relative;
   z-index: 2;
 }
@@ -674,7 +720,7 @@
 .servHeading {
   font-family: var(--font-sans);
   /* At 720px container, 56px Inter 700 wraps as spec: 5 natural lines */
-  font-size: clamp(28px, 8vw, 56px);
+  font-size: clamp(38px, 4vw, 56px);
   font-weight: 500;
   line-height: 1.12;
   letter-spacing: -2px;
@@ -695,6 +741,21 @@
   }
 }
 
+@media (max-width: 960px) {
+
+  .servLeftPills,
+  .servRightPills {
+    display: none;
+  }
+
+  .servCenter {
+    max-width: 92vw;
+  }
+
+  .servHeading {
+    font-size: clamp(30px, 6vw, 44px);
+  }
+}
 
 /* =====================================================
    PROCESS / WORKFLOW SECTION — Premium Redesign
