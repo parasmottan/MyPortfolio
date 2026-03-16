@@ -4,9 +4,23 @@
   padding-bottom: 160px;
 }
 
+@media (max-width: 768px) {
+  .main {
+    padding-top: 100px;
+    padding-bottom: 80px;
+  }
+}
+
 .header {
   text-align: center;
   margin-bottom: 80px;
+}
+
+@media (max-width: 768px) {
+  .header {
+    margin-bottom: 48px;
+    padding: 0 16px;
+  }
 }
 
 .title {
@@ -15,6 +29,21 @@
   font-weight: 500;
   line-height: 1.1;
   margin-bottom: 24px;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: clamp(40px, 12vw, 64px);
+    margin-bottom: 16px;
+  }
+}
+
+@media (max-width: 380px) {
+  .title {
+    font-size: 36px;
+  }
 }
 
 .title span {

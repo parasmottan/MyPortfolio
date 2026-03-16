@@ -84,7 +84,7 @@ export default function Blog() {
           </p>
         </div>
 
-        <Link href="/blog/why-visual-hierarchy-matters" className={styles.featuredPost} ref={featuredRef}>
+        <Link href="/blog/how-a-well-designed-website-turns-visitors-into-customers" className={styles.featuredPost} ref={featuredRef}>
           <div className={styles.featuredBg}>
             <div style={{ width: '100%', height: '100%', backgroundColor: '#2f4f4f' }}></div>
           </div>
