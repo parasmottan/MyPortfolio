@@ -1,13 +1,17 @@
 import { MetadataRoute } from "next";
 
-const BASE_URL = "https://parasmottanportfolio.online";
-
 /**
- * Next.js App Router robots.txt.
- * Served automatically at /robots.txt.
+ * Next.js App Router robots.txt — served at /robots.txt.
  *
- * Allows all crawlers and points them to the sitemap.
+ * Domain resolution order:
+ *  1. NEXT_PUBLIC_SITE_URL env var (set in Vercel / production .env)
+ *  2. Canonical production domain (fallback — never references localhost)
  */
+const BASE_URL =
+  (process.env.NEXT_PUBLIC_SITE_URL?.startsWith("http")
+    ? process.env.NEXT_PUBLIC_SITE_URL
+    : null) ?? "https://parasmottanportfolio.online";
+
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
